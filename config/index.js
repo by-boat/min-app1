@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'myApp',
   date: '2022-10-26',
@@ -71,7 +73,10 @@ const config = {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
       }
     }
-  }
+  },
+  alias: {
+    '@': path.join(__dirname, '../src'),
+  },
 }
 
 module.exports = function (merge) {
