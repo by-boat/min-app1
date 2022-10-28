@@ -1,10 +1,9 @@
 import Taro from '@tarojs/taro'
-let globalSystemInfo: any = {}
 
 // 获取系统信息
 export default function getSystemInfo() {
-  if (globalSystemInfo && !globalSystemInfo.ios) {
-    return globalSystemInfo
+  if (Taro.globalSystemInfo && !Taro.globalSystemInfo.ios) {
+    return Taro.globalSystemInfo
   }
 
   // h5环境下忽略navbar
@@ -88,7 +87,7 @@ export default function getSystemInfo() {
   systemInfo.displayNavBarHeight = navBarHeight + systemInfo.navBarExtendHeight //真是显示高度
   systemInfo.capsulePosition = rect //右上角胶囊按钮信息bottom: 58 height: 32 left: 317 right: 404 top: 26 width: 87 目前发现在大多机型都是固定值 为防止不一样所以会使用动态值来计算nav元素大小
   systemInfo.ios = ios //是否ios
-  globalSystemInfo = systemInfo //将信息保存到全局变量中,后边再用就不用重新异步获取了
+  Taro.globalSystemInfo = systemInfo //将信息保存到全局变量中,后边再用就不用重新异步获取了
   return systemInfo
 }
 
