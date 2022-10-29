@@ -1,16 +1,146 @@
+Page {
+  overflow-x: hidden;
+}
+
 .index {
+  overflow-x: hidden;
+
   .hearder {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 88888;
 
     .top_bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: url(./imgs/topbg.png);
+      // background: url(./imgs/topbg.png);
+      background: url(./imgs/topbg.png) no-repeat top center / cover;
       padding-bottom: 30px;
+    }
+
+    .avatarUrl {
+      position: fixed;
+      border-radius: 50%;
+      left: 18px;
+    }
+  }
+
+  .title {
+    width: 100%;
+    height: 334px;
+    background: url(./imgs/topbg.png);
+    padding-top: calc(83px + 19px);
+    background-size: cover;
+    margin-bottom: -187px;
+    padding: 0 18px;
+
+    .text1 {
+      font-size: 30rpx;
+      font-weight: 400;
+      line-height: 42rpx;
+      margin-bottom: 6rpx;
+    }
+
+    .text2 {
+      font-size: 42rpx;
+      font-family: PingFangHK-Semibold, PingFangHK;
+      font-weight: 600;
+      line-height: 59rpx;
+    }
+  }
+
+  .banner {
+    width: 674rpx;
+    height: 468rpx;
+    padding: 0 18px;
+    overflow: hidden;
+
+    .two_img {
+      position: relative;
+      width: 674rpx;
+      height: 468rpx;
+
+      image {
+        position: absolute;
+      }
+
+      .gif {
+        width: 220px;
+        height: 300px;
+        right: 30rpx;
+        bottom: 25rpx;
+      }
+    }
+
+    image {
+      width: 674rpx;
+      height: 468rpx;
+      border-radius: 10px;
+    }
+  }
+
+  .groups {
+    width: 700px;
+    height: 860px;
+    margin: 19px auto;
+    box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    position: relative;
+
+    .big_bg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: .3125rem;
+      left: 0;
+      width: 700px;
+      height: 13.5rem;
+      padding: 0 .3125rem;
+      box-sizing: border-box;
+
+      .ScrollView {
+        width: 100%;
+        height: 13.5rem;
+        white-space: nowrap;
+
+        .goods {
+          display: inline-block;
+          width: 8.6875rem;
+          height: 13.5rem;
+          background: #fff;
+          border-radius: 8px;
+          margin-right: .3125rem;
+          border-radius: .625rem;
+          overflow: hidden;
+
+          .goods_img {
+            width: 8.6875rem;
+            height: 8.6875rem;
+          }
+
+          .goods_name {
+            font-size: .625rem;
+            margin: 0 .3125rem;
+            font-weight: 500;
+            line-height: 1rem;
+            height: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            word-break: break-word;
+          }
+        }
+
+        .goods:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 }
